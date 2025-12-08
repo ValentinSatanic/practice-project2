@@ -1,0 +1,91 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux'; // <-- Добавлено useSelector
+import { addToCart } from '../../store/slices/cartSlice';
+import { getImageUrl } from '../../utils/fixUrl';
+import s from './ProductCard.module.css';
+
+const ProductCard = ({ id, title, price, discont_price, image }) => { 
+  const dispatch = useDispatch();
+  
+  // 🚀 Redux-логика: Проверяем, есть ли товар в корзине
+  const cartItems = useSelector(state => state.cart.items);
+  const isAdded = cartItems.some(item => item.id === id); // isAdded теперь зависит от Redux-стора
+  
+  const imageUrl = getImageUrl(image);
+  
+  // Определяем цены
+  const originalPrice = price || 0;
+  const finalPrice = discont_price !== null ? discont_price : originalPrice;
+  const isDiscounted = discont_price !== null && originalPrice > discont_price;
+  
+  let discountPercent = 0;
+  if (isDiscounted) {
+    discountPercent = Math.round(((originalPrice - discont_price) / originalPrice) * 100);
+  }
+
+  // Функция обработки добавления в корзину
+  const handleAddToCart = (e) => {
+    e.preventDefault(); 
+    e.stopPropagation(); 
+    
+    // Добавляем только если товара еще нет
+    if (!isAdded) {
+        dispatch(addToCart({
+            id,
+            title,
+            price: finalPrice, 
+            image,
+            count: 1 
+        }));
+    }
+  };
+
+  return (
+    <div className={s.productCard}>
+        
+        <Link to={`/products/${id}`} className={s.link}>
+            
+            <div className={s.imageWrapper}>
+                <img src={imageUrl} alt={title} className={s.image} />
+                
+                {/* Бейдж скидки */}
+                {isDiscounted && (
+                    <div className={s.discountBadge}>
+                        -{discountPercent}%
+                    </div>
+                )}
+
+                {/* КНОПКА КОРЗИНЫ */}
+                <button 
+                    // Класс зависит от Redux-состояния
+                    className={`${s.cartButton} ${isAdded ? s.addedButton : ''}`}
+                    onClick={handleAddToCart}
+                    disabled={isAdded} // Отключаем клик, если товар уже добавлен
+                    title={isAdded ? "Product is already in cart" : `Add ${title} to cart`}
+                >
+                    {isAdded ? "Added" : "Add to cart"}
+                </button>
+            </div>
+            
+            <div className={s.content}>
+                <h3 className={s.title}>{title}</h3>
+                
+                <div className={s.priceContainer}>
+                    <p className={s.finalPrice}>
+                        ${finalPrice.toFixed(2)}
+                    </p>
+                    {isDiscounted && (
+                        <p className={s.originalPrice}>
+                            ${originalPrice.toFixed(2)}
+                        </p>
+                    )}
+                </div>
+            </div>
+        </Link>
+        
+    </div>
+  );
+};
+
+export default ProductCard;

@@ -1,0 +1,39 @@
+.cardLink {
+  text-decoration: none;
+}
+
+.categoryCard {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoryCard:hover {
+  transform: translateY(-8px);
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%; 
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  padding: 12px;
+  color: #333;
+}

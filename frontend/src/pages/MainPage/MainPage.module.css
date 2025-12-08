@@ -1,0 +1,232 @@
+.mainContainer {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+}
+
+.heroBanner {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 0;
+  display: flex;
+  align-items: center; 
+  padding-left: 50px;
+  padding-top: 41.67%;
+  position: relative;
+}
+
+.heroContent {
+  max-width: 65%;
+  color: #FFFFFF;
+  position: absolute; 
+  top: 110px;
+  left: 0;
+  width: 100%;
+  margin: 0 auto; 
+  padding: 0 50px;
+}
+
+.heroContent h1 {
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.heroBtn {
+  background-color: #339933; 
+  color: white;
+  padding: 16px 56px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 150px;
+}
+
+.section {
+  padding: 100px 50px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ccc;
+  min-width: 20px;
+}
+
+.sectionHeader h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+.outlineBtn {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 10px 25px;
+  color: #8b8b8b;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.categoriesGrid > * {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.discountSection {
+  background: linear-gradient(261.47deg, #0B710B 32.63%, #339933 98.96%);
+  width: 95%;
+  height: 600px;
+  box-sizing: border-box; 
+  margin: 80px auto;
+  padding: 32px;
+  border-radius: 12px;
+  color: white;
+  overflow: hidden;
+}
+
+.discountContent h2 {
+  font-size: 64px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 30px 0;
+}
+
+.discountLayout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  height: 80%;
+}
+
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-end;
+  flex-basis: 45%;
+}
+
+.imageWrapper img {
+  max-width: 100%;
+  height: 530px;
+  object-fit: contain;
+}
+
+.formWrapper {
+  flex: 1;
+  padding: 0;
+  flex-basis: 30%;
+}
+
+.customForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 100px; 
+}
+
+.customForm input {
+  background: transparent !important;
+  border: 1px solid white !important; 
+  color: white !important;
+  padding: 15px 20px !important;
+  border-radius: 5px !important; 
+  width: 100%;
+  box-sizing: border-box; 
+  font-size: 20px;
+  margin-bottom: 24px !important; 
+}
+
+.customForm input::placeholder {
+  color: #d8ffd8; 
+  opacity: 1;
+}
+
+.customForm button {
+  background-color: white !important; 
+  color: #282828 !important;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: none;
+  transition: all 0.2s;
+}
+
+.customForm button:hover {
+  background-color: #282828 !important;
+  color: white !important;
+  box-shadow: none;
+}
+
+.error {
+  color: #ffe0e0; 
+  font-size: 14px;
+  margin-left: 5px;
+  margin-top: -20px; 
+  margin-bottom: -4px; 
+  min-height: 20px; 
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 1360px) {
+  .discountSection {
+    width: auto;
+    max-width: none;
+    margin: 80px 40px; 
+    height: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .categoriesGrid, .productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .discountLayout {
+    flex-direction: column;
+    align-items: center;
+  }
+  .discountSection {
+    margin: 40px 20px;
+  }
+  .imageWrapper { order: 2; }
+  .formWrapper { order: 1; }
+}
+
+@media (max-width: 600px) {
+  .categoriesGrid, .productsGrid { grid-template-columns: 1fr; }
+  .section, .heroBanner, .discountSection { padding: 30px 20px; }
+  .heroContent h1 { font-size: 48px; }
+  .discountContent h2 { font-size: 32px; }
+}

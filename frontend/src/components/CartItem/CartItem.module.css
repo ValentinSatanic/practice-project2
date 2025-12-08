@@ -1,0 +1,146 @@
+.item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100px;
+}
+
+.title {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.quantity button {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #387c1c;
+  transition: background-color 0.1s;
+}
+
+.quantity button:hover:not(:disabled) {
+  background-color: #e6f3e0;
+}
+
+.quantity button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.count {
+  padding: 0 15px;
+  font-weight: bold;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  min-width: 40px;
+  text-align: center;
+}
+
+.priceBlock {
+    text-align: right;
+    width: 200px;
+    flex-shrink: 0;
+    margin-left: 20px;
+}
+
+.priceDetails {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.unitPrice {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.totalPrice {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.originalPrice {
+    font-size: 0.9em;
+    color: #ff4d4d;
+    text-decoration: line-through;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 5px;
+  margin-left: 20px;
+}
+
+.removeButton:hover {
+  color: #cc3333;
+}
+
+@media (max-width: 600px) {
+    .item {
+        flex-wrap: wrap;
+    }
+    .image {
+        margin-right: 10px;
+    }
+    .details {
+        min-height: auto;
+    }
+    .priceBlock {
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+        margin-top: 10px;
+        order: 1;
+    }
+    .priceDetails {
+        justify-content: flex-start;
+    }
+    .removeButton {
+        order: -1;
+        margin-left: auto;
+    }
+}

@@ -1,0 +1,119 @@
+.discountSection {
+  background-color: #339933; 
+  
+  width: 100%; 
+  box-sizing: border-box; 
+  margin: 80px 0; 
+  padding: 32px 50px; 
+  border-radius: 12px; 
+  color: white;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.discountContent {
+    width: 100%;
+    max-width: 1360px;
+}
+
+.discountContent h2 {
+  font-size: 48px; 
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px; 
+  margin-top: 0;
+}
+
+.discountLayout {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+  gap: 24px; 
+}
+
+.imageWrapper {
+  flex: 1; 
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-end;
+  flex-basis: 45%;
+}
+.imageWrapper img {
+  max-width: 100%;
+  height: 350px;
+  object-fit: contain;
+}
+
+.formWrapper {
+  flex: 1;
+  padding: 0;
+  flex-basis: 50%; 
+}
+
+.customForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 40px; 
+}
+
+.customForm input {
+  background: transparent !important;
+  border: 1px solid white !important; 
+  color: white !important;
+  padding: 15px 20px !important;
+  border-radius: 5px !important; 
+  width: 100%;
+  box-sizing: border-box; 
+  font-size: 16px;
+  margin-bottom: 24px !important; 
+}
+
+.customForm input::placeholder {
+  color: #d8ffd8; 
+  opacity: 1;
+}
+
+.customForm button {
+  background-color: white !important; 
+  color: #339933 !important; 
+  font-weight: 700;
+  font-size: 18px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.error {
+    color: #ffe0e0; 
+    font-size: 14px;
+    margin-left: 5px;
+    margin-top: -20px; 
+    margin-bottom: -4px;
+    min-height: 20px;
+}
+
+.submittedButton {
+    background-color: white !important; 
+    color: #339933 !important;
+    
+    border: none !important; 
+    cursor: default !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; 
+}
+
+.submittedButton:hover {
+    background-color: white !important; 
+    color: #339933 !important; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; 
+}
+
+.formError {
+    color: white;
+    font-size: 14px;
+    margin-top: -15px; 
+    margin-bottom: 15px; 
+}

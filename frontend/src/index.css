@@ -1,0 +1,49 @@
+/* src/index.css */
+
+:root {
+  --color-primary: #387c1c;
+  --color-secondary: #a4c95f;
+  --color-danger: #ff4d4d;
+  --color-text-dark: #333333;
+  --color-text-light: #555555;
+
+  --font-family-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  --spacing-unit: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-main);
+  color: var(--color-text-dark);
+  line-height: 1.5;
+  background-color: #ffffff; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input[type="submit"] {
+  cursor: pointer;
+}
+
+ul, ol {
+    list-style: none;
+}

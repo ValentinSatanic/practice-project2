@@ -1,0 +1,44 @@
+.filterBar {
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.form {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.label {
+  font-weight: 500;
+  color: #555;
+  white-space: nowrap;
+}
+
+.input, .select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.input[type="number"] {
+  width: 80px;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.resetButton {
+    padding: 8px 15px;
+}

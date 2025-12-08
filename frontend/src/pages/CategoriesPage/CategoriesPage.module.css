@@ -1,0 +1,33 @@
+
+
+.container {
+  max-width: 96%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.categoryCard {
+  flex: 1;
+  min-width: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+
+
+.title {
+  text-align: left;
+  margin: 90px 0 0 0  ;
+  font-size: 64px;
+}

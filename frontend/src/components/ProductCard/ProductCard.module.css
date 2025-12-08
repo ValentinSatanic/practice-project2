@@ -1,0 +1,136 @@
+.productCard {
+  background-color: #fff;
+  border-radius: 12px; 
+  border: 1px solid #e0e0e0;
+  overflow: hidden; 
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.productCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discountBadge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #339933;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.content {
+  padding: 15px 15px 20px 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 10px;
+  line-height: 1.3;
+  color: #333;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.finalPrice {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #333;
+  line-height: 1;
+}
+
+.originalPrice {
+  font-size: 1.2em;
+  color: #a8a8a8;
+  text-decoration: line-through;
+  font-weight: 400;
+  align-self: flex-end;
+}
+
+.cartButton {
+  position: absolute;
+  bottom: 10px;
+  width: 90%;
+  height: 70px;
+  padding: 10px;
+  margin: 0;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s, border-color 0.2s, color 0.2s;
+  z-index: 10;
+}
+
+.productCard:hover .cartButton {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  background-color: #339933;
+}
+
+.productCard:hover .cartButton:hover {
+  background-color: #383838;
+}
+
+.addedButton {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  background-color: white;
+  color: #333;
+  border: 1px solid #333;
+  pointer-events: none;
+}
+.productCard:hover .addedButton,
+.addedButton:hover {
+  background-color: white;
+  color: #333;
+  border: 1px solid #333;
+}
