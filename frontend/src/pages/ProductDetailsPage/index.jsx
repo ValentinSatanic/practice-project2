@@ -12,7 +12,6 @@ const ProductDetailsPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   
-  // 🔑 ЛОКАЛЬНОЕ СОСТОЯНИЕ ДЛЯ СЧЕТЧИКА
   const [count, setCount] = useState(1); 
   
   const { selectedProduct: product, detailsStatus: status, error } = useSelector(state => state.products);
